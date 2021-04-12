@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_topbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:background="@color/green"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="12dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:text="@string/app_name"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_medium_italic"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_profile"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/layout_topbar"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView_profilePicture"
+
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="3:4"
+            android:scaleType="centerCrop"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:layout_margin="12dp"
+
+            android:background="@color/green"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/textView_personaliaHeader"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+
+            app:layout_constraintTop_toTopOf="@id/imageView_profilePicture"
+            app:layout_constraintBottom_toBottomOf="@id/imageView_profilePicture"
+            app:layout_constraintStart_toEndOf="@id/imageView_profilePicture"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaMailHeader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/mail_header"
+                android:textSize="12sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaMail"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toEndOf="@id/textView_personaliaMailHeader"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/personal_mail"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaPhoneHeader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaMailHeader"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/phone_header"
+                android:textSize="12sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaPhone"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toEndOf="@id/textView_personaliaPhoneHeader"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaMail"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/personal_phone"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaAddressHeader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaPhoneHeader"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/address_header"
+                android:textSize="12sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaAddress"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toEndOf="@id/textView_personaliaAddressHeader"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaPhone"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/personal_address"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+
+                android:ellipsize="end"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaBirthdateHeader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaAddress"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/birthdate_header"
+                android:textSize="12sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaBirthdate"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toEndOf="@id/textView_personaliaBirthdateHeader"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaAddress"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/personal_birthdate"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaDriverLicenseHeader"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaBirthdateHeader"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/driverLicense_header"
+                android:textSize="12sp"
+                android:textColor="@color/green"
+                android:fontFamily="@font/roboto_bold"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView_personaliaDriverLicense"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintStart_toEndOf="@id/textView_personaliaDriverLicenseHeader"
+                app:layout_constraintTop_toBottomOf="@id/textView_personaliaBirthdate"
+
+                android:paddingTop="10dp"
+
+                android:text="@string/personal_driverLicense"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView_profileHeader"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="12dp"
+
+            app:layout_constraintTop_toBottomOf="@id/imageView_profilePicture"
+
+            android:text="@string/name"
+            android:textSize="28sp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/roboto_medium_italic"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView_profileContent"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="12dp"
+
+            app:layout_constraintTop_toBottomOf="@id/textView_profileHeader"
+
+            android:text="@string/profile_text"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_regular"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_projectHeader"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="12dp"
+
+        app:layout_constraintTop_toBottomOf="@id/layout_profile"
+
+        android:text="@string/projects_title"
+        android:textSize="20sp"
+        android:textColor="@color/green"
+        android:fontFamily="@font/roboto_bold"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_margin="12dp"
+
+        app:layout_constraintTop_toBottomOf="@id/textView_projectHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        tools:listitem="@layout/article_item"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

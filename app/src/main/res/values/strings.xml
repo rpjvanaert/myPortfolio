@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyPortfolio</string>
+    <string name="name">Ralf van Aert</string>
+    <string name="profile_text">Bescheiden en eerlijke hogeschool student, werkend aan Technische Informatica bij Avans Hogeschool Breda. Mijn passie ligt bij apps en grafische applicaties en ben hierin verheugd om verder te ontwikkelen. Met een oog voor detail voor uitstraling en werking, strevend naar een onderhoudbare en mooie applicatie en code. Ik ben op zoek naar een softwarebedrijf om mezelf in te ontwikkelen.</string>
+    <string name="projects_title">Projecten</string>
+    <string name="personal_mail">Ralf@van-Aert.nl</string>
+    <string name="mail_header">Mail:</string>
+    <string name="phone_header">Telefoon:</string>
+    <string name="personal_phone">+31 6 37 25 75 16</string>
+    <string name="address_header">"Adres: "</string>
+    <string name="personal_address">Maalbergenstraat 4B Wernhout</string>
+    <string name="personal_birthdate">13 Oktober 2000</string>
+    <string name="birthdate_header">"Geboortedatum: "</string>
+    <string name="driverLicense_header">"Rijbewijs: "</string>
+    <string name="personal_driverLicense">Rijbewijs B</string>
+</resources>

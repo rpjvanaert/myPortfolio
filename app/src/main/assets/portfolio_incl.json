@@ -1,0 +1,10 @@
+{
+	"articles" : [
+		{
+			"title" : "Blind Walls Route",
+			"descr" : "Route navigation app for Blind Walls Gallery",
+			"tumbnail" : "BWallsRoute_logo.png",
+			"article_file" : "blindwallsroute.json"
+		}
+	]
+}
