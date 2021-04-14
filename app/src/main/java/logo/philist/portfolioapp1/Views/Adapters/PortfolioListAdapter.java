@@ -8,15 +8,14 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
-import logo.philist.portfolioapp1.Views.Adapters.OnItemClickListener;
+import logo.philist.portfolioapp1.Models.AssetManager;
 
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.List;
 
-import logo.philist.portfolioapp1.Models.ArticleItem;
+import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
 import logo.philist.portfolioapp1.R;
 
 public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdapter.ViewHolder> {
@@ -42,7 +41,12 @@ public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ArticleItem item = articleItems.get(position);
 
+        holder.imageViewPreview.setImageDrawable(AssetManager.getAssetsImageDrawable(item.getPicture(), context));
+
+        holder.textViewTitle.setText(item.getTitle());
+        holder.textViewDescription.setText(item.getDescription());
     }
 
     @Override
@@ -52,9 +56,9 @@ public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdap
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private MaterialTextView textViewTitle;
-        private MaterialTextView textViewDescription;
-        private ImageView imageViewPreview;
+        private final MaterialTextView textViewTitle;
+        private final MaterialTextView textViewDescription;
+        private final ImageView imageViewPreview;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

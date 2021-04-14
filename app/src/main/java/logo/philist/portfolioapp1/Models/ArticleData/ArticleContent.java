@@ -1,4 +1,4 @@
-package logo.philist.portfolioapp1.Models;
+package logo.philist.portfolioapp1.Models.ArticleData;
 
 public class ArticleContent {
 

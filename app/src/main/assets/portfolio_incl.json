@@ -3,7 +3,25 @@
 		{
 			"title" : "Blind Walls Route",
 			"descr" : "Route navigation app for Blind Walls Gallery",
-			"tumbnail" : "BWallsRoute_logo.png",
+			"preview_image" : "BWallsRoute_logo.png",
+			"article_file" : "blindwallsroute.json"
+		},
+		{
+			"title" : "Blind Walls Route",
+			"descr" : "Route navigation app for Blind Walls Gallery",
+			"preview_image" : "BWallsRoute_logo.png",
+			"article_file" : "blindwallsroute.json"
+		},
+		{
+			"title" : "Blind Walls Route",
+			"descr" : "Route navigation app for Blind Walls Gallery",
+			"preview_image" : "BWallsRoute_logo.png",
+			"article_file" : "blindwallsroute.json"
+		},
+		{
+			"title" : "Blind Walls Route",
+			"descr" : "Route navigation app for Blind Walls Gallery",
+			"preview_image" : "BWallsRoute_logo.png",
 			"article_file" : "blindwallsroute.json"
 		}
 	]

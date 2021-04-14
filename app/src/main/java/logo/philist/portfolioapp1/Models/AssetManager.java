@@ -9,30 +9,33 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import logo.philist.portfolioapp1.Models.ArticleData.Article;
+import logo.philist.portfolioapp1.Models.ArticleData.ArticleContent;
+import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
 
 public class AssetManager {
 
     public static final String PORTFOLIO_INCL_FILE = "portfolio_incl.json";
     public static final String PROFILE_PICTURE_FILE = "profile_picture1.jpg";
 
-    public static Drawable getProfilePicture(Context context){
-        Drawable profilePicture = null;
+    public static Drawable getAssetsImageDrawable(String fileLocation, Context context){
+        Drawable drawableImage = null;
 
         try {
-            InputStream inputStream = context.getAssets().open(PROFILE_PICTURE_FILE);
-            profilePicture = Drawable.createFromStream(inputStream, null);
+            InputStream inputStream = context.getAssets().open(fileLocation);
+            drawableImage = Drawable.createFromStream(inputStream, null);
             inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return profilePicture;
+        return drawableImage;
     }
 
     private static List<ArticleItem> getArticleItems(String jsonString) {
@@ -70,8 +73,8 @@ public class AssetManager {
         StringBuilder stringBuilder = new StringBuilder();
         try {
             File file = new File(context.getFilesDir(), filePath);
-            FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            InputStream inputStream = context.getAssets().open(filePath);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
             String line = bufferedReader.readLine();
 
@@ -81,6 +84,7 @@ public class AssetManager {
             }
 
             bufferedReader.close();
+            inputStream.close();
 
         } catch (IOException e) {
             e.printStackTrace();
