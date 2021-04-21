@@ -2,14 +2,40 @@
 	"title" : "Blind Walls Route",
 	"content" : [
 		{
-			"type" : "paragraph",
-			"content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis condimentum turpis ut facilisis. Proin volutpat at ex quis sodales. Praesent non diam efficitur, auctor sem pharetra, tincidunt nibh. Mauris id cursus ex. Phasellus lobortis nulla nec tellus accumsan, id faucibus mi euismod. Sed eget arcu ullamcorper, suscipit ipsum quis, venenatis massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus urna justo, non consequat metus convallis sed.",
-			"italic" : "false"
+			"type" : "header",
+			"content" : "Route navigatie app"
 		},
 		{
-			"type" : "header",
-			"content" : "Opdracht",
-			"style" : "null"
+			"type" : "paragraph",
+			"content" : "In het tweede jaar van Technische Informatica kregen we als vrije eindopdracht voor Clientside Development om een route navigatie app te maken. De eisen waren dat we gebruik maken van OpenStreetMap en OpenRouteService samen met GPS."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "In het verleden heb ik wel eens te maken gehad met Blindwalls Gallery, via school, vrienden en de omgeving Breda. Gezien te hebben en ook eens een route gevolgd te hebben ervan, kwam dit idee bij mij opdagen. Een route navigatie app voor Blindwalls Gallery. Zo is dus 'Blind Walls Route' ontstaan."
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Het ontwerp"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Route navigatie voor Blindwalls Gallery, dat is het idee, maar de vraag is wat wil je erin hebben. Het was al snel duidelijk dat we gebruik gingen maken van de BlindwallsApi die 2 GET-requests beschikbaar heeft; route en murals get functie."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Daarom hebben we ervoor besloten om sowieso een lijst voor route en murals te maken samen met een detailscherm, waarin alle handige informatie komt te staan. Dit betekent voor de route dat er een lijst is met in aflopende volgorde de murals. Naast dat bedachten we ons dat het leuk was om een beginscherm te hebben waar je op de kaart te zien bent met alle murals erbij."
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Eindoplevering"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "De eindoplevering was in vorm van een expositie, hiervoor is er een pdf en een expositie video gemaakt. In de pdf staat alles, alle screenshots en uitleg van functionaliteiten en samenvatting van ontwerp."
+		},
+		{
+			"type" : "pdf",
+			"content" : "bwallsroute_eindexpositie.pdf"
 		}
 	]
 }

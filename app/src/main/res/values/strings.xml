@@ -13,4 +13,7 @@
     <string name="birthdate_header">"Geboortedatum: "</string>
     <string name="driverLicense_header">"Rijbewijs: "</string>
     <string name="personal_driverLicense">Rijbewijs B</string>
+    <string name="lorem_ipsum_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="next">Volgende</string>
+    <string name="previous">Vorige</string>
 </resources>

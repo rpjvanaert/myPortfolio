@@ -3,25 +3,27 @@ package logo.philist.portfolioapp1.Models.ArticleData;
 import java.util.ArrayList;
 import java.util.List;
 
+import logo.philist.portfolioapp1.Models.ViewData.ViewData;
+
 public class Article {
 
     private String title;
-    private List<ArticleContent> articleContent;
+    private List<ViewData> viewData;
 
     public Article(String title) {
         this.title = title;
-        this.articleContent = new ArrayList<>();
+        this.viewData = new ArrayList<>();
     }
 
-    public void addArticleContent(ArticleContent articleContent) {
-        this.articleContent.add(articleContent);
+    public void addViewData(ViewData viewData) {
+        this.viewData.add(viewData);
     }
 
     public String getTitle() {
         return title;
     }
 
-    public List<ArticleContent> getArticleContent() {
-        return articleContent;
+    public List<ViewData> getViewData() {
+        return viewData;
     }
 }

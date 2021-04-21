@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     @Override
     public void onItemClick(int clickedPosition) {
-
+        Intent intent = new Intent(MainActivity.this, ProjectActivity.class);
+        intent.putExtra(ProjectActivity.PROJECT_FILE_TAG, articleItems.get(clickedPosition).getArticle_url());
+        startActivity(intent);
     }
 }

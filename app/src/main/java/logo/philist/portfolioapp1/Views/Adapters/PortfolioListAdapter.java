@@ -20,6 +20,8 @@ import logo.philist.portfolioapp1.R;
 
 public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdapter.ViewHolder> {
 
+    public static final String TAG = PortfolioListAdapter.class.getSimpleName();
+
     private List<ArticleItem> articleItems;
     private Context context;
     private OnItemClickListener clickListener;

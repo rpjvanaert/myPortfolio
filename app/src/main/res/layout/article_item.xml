@@ -66,7 +66,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView_previewArticleTitle"
 
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            android:text="@string/lorem_ipsum_paragraph"
             android:textSize="14sp"
             />
 

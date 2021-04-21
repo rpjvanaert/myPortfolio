@@ -2,6 +2,7 @@ package logo.philist.portfolioapp1.Models;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -9,6 +10,8 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,8 +21,11 @@ import java.util.List;
 import logo.philist.portfolioapp1.Models.ArticleData.Article;
 import logo.philist.portfolioapp1.Models.ArticleData.ArticleContent;
 import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
+import logo.philist.portfolioapp1.Models.ViewData.ViewData;
 
 public class AssetManager {
+
+    public static final String TAG = AssetManager.class.getSimpleName();
 
     public static final String PORTFOLIO_INCL_FILE = "portfolio_incl.json";
     public static final String PROFILE_PICTURE_FILE = "profile_picture1.jpg";
@@ -35,6 +41,7 @@ public class AssetManager {
             e.printStackTrace();
         }
 
+        Log.i(TAG, "getAssetsImageDrawable: " + fileLocation);
         return drawableImage;
     }
 
@@ -43,8 +50,6 @@ public class AssetManager {
 
         try {
             JSONObject json = new JSONObject(jsonString);
-
-
 
             JSONArray articlesArray = json.getJSONArray("articles");
 
@@ -72,7 +77,7 @@ public class AssetManager {
     private static String readJson(Context context, String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            File file = new File(context.getFilesDir(), filePath);
+            File file = getFile(context, filePath);
             InputStream inputStream = context.getAssets().open(filePath);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
@@ -107,11 +112,10 @@ public class AssetManager {
 
             for (int indexContent = 0; indexContent < contentArray.length(); ++indexContent) {
                 JSONObject contentObject = contentArray.getJSONObject(indexContent);
-                article.addArticleContent(
-                        new ArticleContent(
-                                contentObject.getString("type"),
-                                contentObject.getString("content"),
-                                contentObject.getString("style")
+                article.addViewData(
+                        new ViewData(
+                                ViewData.getStringViewType(contentObject.getString("type")),
+                                contentObject.getString("content")
                         )
                 );
             }
@@ -121,5 +125,28 @@ public class AssetManager {
         }
 
         return article;
+    }
+
+    public static File getFile(Context context, String filePath){
+        Log.i(TAG, "getFile: " + filePath);
+
+        File cacheFile = new File(context.getCacheDir(), filePath);
+        try {
+            InputStream inputStream = context.getAssets().open(filePath);
+            FileOutputStream outputStream = new FileOutputStream(cacheFile);
+            byte[] buffer = new byte[1024];
+            int len;
+            while ((len = inputStream.read(buffer)) > 0){
+                outputStream.write(buffer, 0, len);
+            }
+
+            outputStream.close();
+            inputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return cacheFile;
     }
 }

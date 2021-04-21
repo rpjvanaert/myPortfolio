@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="preview_image_width">76dp</dimen>
+    <dimen name="font_size_paragraph">14sp</dimen>
 </resources>
