@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+
 import logo.philist.portfolioapp1.Models.ArticleData.Article;
 import logo.philist.portfolioapp1.Models.AssetManager;
 import logo.philist.portfolioapp1.R;
 import logo.philist.portfolioapp1.Views.Adapters.ProjectListingAdapter;
 
-public class ProjectActivity extends AppCompatActivity {
+public class ProjectActivity extends YouTubeBaseActivity {
 
     public static final String PROJECT_FILE_TAG = "PROJECT_FILE_PATH";
 

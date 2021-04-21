@@ -24,5 +24,6 @@ public class YoutubeInitializedListener implements YouTubePlayer.OnInitializedLi
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
         Log.e(TAG, "onInitializationFailure");
+        Log.e(TAG, youTubeInitializationResult.toString() );
     }
 }
