@@ -1,7 +1,10 @@
 package logo.philist.portfolioapp1.Models;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
+import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -10,22 +13,23 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import logo.philist.portfolioapp1.Models.ArticleData.Article;
-import logo.philist.portfolioapp1.Models.ArticleData.ArticleContent;
 import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
 import logo.philist.portfolioapp1.Models.ViewData.ViewData;
 
-public class AssetManager {
+public class ResourceManager {
 
-    public static final String TAG = AssetManager.class.getSimpleName();
+    public static final String TAG = ResourceManager.class.getSimpleName();
 
     public static final String PORTFOLIO_INCL_FILE = "portfolio_incl.json";
     public static final String PROFILE_PICTURE_FILE = "profile_picture1.jpg";
@@ -77,7 +81,6 @@ public class AssetManager {
     private static String readJson(Context context, String filePath) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            File file = getFile(context, filePath);
             InputStream inputStream = context.getAssets().open(filePath);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
 
@@ -148,5 +151,36 @@ public class AssetManager {
             e.printStackTrace();
         }
         return cacheFile;
+
+        /*
+        AssetManager assetManager = context.getAssets();
+        try {
+            AssetFileDescriptor assetFileDescriptor = assetManager.openFd(filePath);
+            return assetFileDescriptor.getParcelFileDescriptor();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+         */
+
+        /*
+        File resultFile = new File(filePath);
+        Log.i(TAG, "getFile: " + resultFile.getName());
+        try {
+            InputStream in = context.getAssets().open(filePath);
+            OutputStream out = new FileOutputStream(resultFile);
+            int length;
+            byte[] bytes = new byte[1024];
+            while ((length = in.read(bytes)) != -1) {
+                out.write(bytes, 0 , length);
+            }
+
+            out.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return resultFile;
+         */
     }
 }

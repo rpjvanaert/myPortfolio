@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import logo.philist.portfolioapp1.Models.AssetManager;
+import logo.philist.portfolioapp1.Models.ResourceManager;
 
 import com.google.android.material.textview.MaterialTextView;
 
@@ -45,7 +45,7 @@ public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ArticleItem item = articleItems.get(position);
 
-        holder.imageViewPreview.setImageDrawable(AssetManager.getAssetsImageDrawable(item.getPicture(), context));
+        holder.imageViewPreview.setImageDrawable(ResourceManager.getAssetsImageDrawable(item.getPicture(), context));
 
         holder.textViewTitle.setText(item.getTitle());
         holder.textViewDescription.setText(item.getDescription());

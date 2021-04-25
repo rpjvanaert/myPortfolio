@@ -1,0 +1,89 @@
+{
+	"title" : "Blind Walls Route",
+	"content" : [
+		{
+			"type" : "header",
+			"content" : "Route navigatie app"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "In het tweede jaar van Technische Informatica kregen we als vrije eindopdracht voor Clientside Development om een route navigatie app te maken. De eisen waren dat we gebruik maken van OpenStreetMap en OpenRouteService samen met GPS."
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Idee"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "In het verleden heb ik wel eens te maken gehad met Blindwalls Gallery, via school, vrienden en de omgeving Breda. Gezien te hebben en ook eens een route gevolgd te hebben ervan, kwam dit idee bij mij opdagen. Een route navigatie app voor Blindwalls Gallery. Zo is dus 'Blind Walls Route' ontstaan."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Route navigatie voor Blindwalls Gallery, dat is het idee, maar de vraag is wat wil je erin hebben. Het was al snel duidelijk dat we gebruik gingen maken van de BlindwallsApi die 2 GET-requests beschikbaar heeft; route en murals get functie."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Daarom hebben we ervoor besloten om sowieso een lijst voor route en murals te maken samen met een detailscherm, waarin alle handige informatie komt te staan. Dit betekent voor de route dat er een lijst is met in aflopende volgorde de murals. Naast dat bedachten we ons dat het leuk was om een beginscherm te hebben waar je op de kaart te zien bent met alle murals erbij."
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Ontwerp"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Het ontwerp in het geheel is gebouwd op de data uit 2 API's; BlindWallsApi en OpenRouteService. Dit is te zien aan de opzet van klasses die deze data opslaat. Ten slot is er besloten om gebruik te maken van Android Lifecycle; ViewModels en LiveData, zo dat app efficiënt en snel is. Views worden up to date gehouden aan de hand van de ViewModels, die hun data krijgen van repositories. De keuze voor het weglaten van databases is gemaakt in verband complete afhankelijkheid van de api's."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Blind Walls Route is een van mijn apps waar ik trots op ben, een van de redenen is dat ik hier dingen heb geleerd, mooier en slimmer, zowel in gebruikersvriendelijkheid als code. Al heb ik nog veel te leren en zat er hier tijdsdruk bij, ben ik alsnog blij op de netheid van de code die ik des tijds heb kunnen leveren. Eén voorbeeld hiervan is de werking van Models; Blindwalls en Navigation (OpenRouteService) gedeelte."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Beide werken vanuit hetzelfde principe; data van API in een logische datastructuur zetten met behulp van een repository en een viewmodel om lifecycle te beheren van alles. Hierbij dus gebruik gemaakt van singleton repositories en Android.ViewModels (en LiveData). Met behulp van Postman heb ik bekeken welke informatie belangrijk is en waar het staat. Zo zijn er 2 kanten van data verwerken ontstaan, zie diagrammen hieronder."
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/uml_blindwallsroute_model.jpg"
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/uml_openrouteservice_model.jpg"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Naast dat heb ik besloten de Gps en direction gedeelte samen te wrappen naar Orientation. Waarbij Orientation-Manager/Listener geldt als een methode om Gps/Direction-Manager/Listener samen te pakken. Dit kan je kan zien hoe dit gedaan wordt in de klassediagram hieronder. Hierbij geeft OrientationManager de listeners uit OrientationListener door aan de GpsManager en DirectionManager door die het heeft."
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/uml_orientation_model.jpg"
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Eindoplevering"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "De eindoplevering was in vorm van een expositie, hiervoor is er een pdf en een expositie video gemaakt. In de pdf staat alles, alle screenshots en uitleg van functionaliteiten en samenvatting van ontwerp."
+		},
+		{
+			"type" : "pdf",
+			"content" : "pdf_bwallsroute_eindexpositie.pdf"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Vervolgens hebben we ook een korte demo video als back-up ervoor gemaakt."
+		},
+		{
+			"type" : "video",
+			"content" : "bJtCo_K3BVc"
+		},
+		{
+			"type" : "sub_header",
+			"content" : "Slot"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Uiteindelijk is er een mooie app opgezet, die helaas niet bruikbaar is in verband met het offline gaat van de BlindWallsApi. Ik heb hier vooral veel van geleerd, veel kleine dingen, dus ben vooral niet bang om mij vragen te stellen over het project!"
+		}
+	]
+}

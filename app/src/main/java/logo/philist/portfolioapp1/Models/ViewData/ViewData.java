@@ -8,6 +8,7 @@ public class ViewData {
     public static final int VIEWTYPE_PDF = 3;
     public static final int VIEWTYPE_IMAGE = 4;
     public static final int VIEWTYPE_VIDEO = 5;
+    public static final int VIEWTYPE_LINK = 6;
 
     private int viewType;
     private String content;
@@ -39,6 +40,8 @@ public class ViewData {
                 return VIEWTYPE_IMAGE;
             case "video":
                 return VIEWTYPE_VIDEO;
+            case "link":
+                return VIEWTYPE_LINK;
         }
         return VIEWTYPE_PARAGRAPH;
     }

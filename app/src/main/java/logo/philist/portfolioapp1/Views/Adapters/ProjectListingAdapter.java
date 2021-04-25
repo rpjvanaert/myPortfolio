@@ -1,8 +1,10 @@
 package logo.philist.portfolioapp1.Views.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.pdf.PdfRenderer;
+import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,14 +24,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-import logo.philist.portfolioapp1.Models.AssetManager;
-import logo.philist.portfolioapp1.Models.PageManager;
+import logo.philist.portfolioapp1.Models.ResourceManager;
 import logo.philist.portfolioapp1.Models.RestrictedData;
 import logo.philist.portfolioapp1.Models.ViewData.ViewData;
 import logo.philist.portfolioapp1.R;
 
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_HEADER;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_IMAGE;
+import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_LINK;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_PARAGRAPH;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_PDF;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_SUB_HEADER;
@@ -69,6 +71,8 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
             case VIEWTYPE_VIDEO:
                 return new ViewHolderVideo(LayoutInflater.from(parent.getContext()).inflate(R.layout.project_item_video, parent, false));
+            case VIEWTYPE_LINK:
+                return new ViewHolderLink(LayoutInflater.from(parent.getContext()).inflate(R.layout.project_item_link, parent, false));
 
             default:
                 throw new IllegalStateException("Unexpected view type: " + viewType);
@@ -96,7 +100,7 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 ViewHolderPdf pdfHolder = ((ViewHolderPdf)holder);
                 try {
                     fileDescriptor = ParcelFileDescriptor.open(
-                            AssetManager.getFile(context, data.getContent()),
+                            ResourceManager.getFile(context, data.getContent()),
                             ParcelFileDescriptor.MODE_READ_ONLY
                     );
 
@@ -184,7 +188,7 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 break;
 
             case VIEWTYPE_IMAGE:
-                ((ViewHolderImage)holder).imageViewImage.setImageDrawable(AssetManager.getAssetsImageDrawable(data.getContent(),context));
+                ((ViewHolderImage)holder).imageViewImage.setImageDrawable(ResourceManager.getAssetsImageDrawable(data.getContent(),context));
                 break;
 
             case VIEWTYPE_VIDEO:
@@ -193,6 +197,18 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                         RestrictedData.youtubeDataApiKey,
                         new YoutubeInitializedListener(viewData.get(position).getContent())
                 );
+                break;
+            case VIEWTYPE_LINK:
+                ViewHolderLink viewHolderLink = (ViewHolderLink) holder;
+                String[] seperatedString = data.getContent().split("\\|");
+                viewHolderLink.linkButton.setText(seperatedString[0]);
+                viewHolderLink.linkButton.setOnClickListener(view -> {
+                    Intent linkBrowseIntent = new Intent();
+                    linkBrowseIntent.setAction(Intent.ACTION_VIEW);
+                    linkBrowseIntent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    linkBrowseIntent.setData(Uri.parse(seperatedString[1]));
+                    context.startActivity(linkBrowseIntent);
+                });
                 break;
 
             default:
@@ -281,6 +297,17 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             super(itemView);
 
             this.youTubePlayerView = itemView.findViewById(R.id.youtubeView_project_item_video);
+        }
+    }
+
+    private class ViewHolderLink extends RecyclerView.ViewHolder {
+
+        private final MaterialButton linkButton;
+
+        public ViewHolderLink(@NonNull View itemView){
+            super(itemView);
+
+            this.linkButton = itemView.findViewById(R.id.button_project_item_link);
         }
     }
 }
