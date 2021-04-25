@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/article_item_width"
+    android:layout_marginHorizontal="@dimen/article_item_margin_h"
+    android:layout_marginVertical="@dimen/article_item_margin_v"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     
@@ -12,6 +14,8 @@
         app:layout_constraintDimensionRatio="16:9"
 
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

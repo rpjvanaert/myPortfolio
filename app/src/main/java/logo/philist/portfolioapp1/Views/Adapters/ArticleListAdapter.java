@@ -18,15 +18,15 @@ import java.util.List;
 import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
 import logo.philist.portfolioapp1.R;
 
-public class PortfolioListAdapter extends RecyclerView.Adapter<PortfolioListAdapter.ViewHolder> {
+public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.ViewHolder> {
 
-    public static final String TAG = PortfolioListAdapter.class.getSimpleName();
+    public static final String TAG = ArticleListAdapter.class.getSimpleName();
 
     private List<ArticleItem> articleItems;
     private Context context;
     private OnItemClickListener clickListener;
 
-    public PortfolioListAdapter(List<ArticleItem> articleTumbnails, Context context, OnItemClickListener clickListener){
+    public ArticleListAdapter(List<ArticleItem> articleTumbnails, Context context, OnItemClickListener clickListener){
         this.articleItems = articleTumbnails;
         this.context = context;
         this.clickListener = clickListener;

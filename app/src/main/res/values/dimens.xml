@@ -2,4 +2,7 @@
 <resources>
     <dimen name="preview_image_width">76dp</dimen>
     <dimen name="font_size_paragraph">14sp</dimen>
+    <dimen name="article_item_margin_h">12dp</dimen>
+    <dimen name="article_item_width">380dp</dimen>
+    <dimen name="article_item_margin_v">12dp</dimen>
 </resources>

@@ -3,6 +3,7 @@ package logo.philist.portfolioapp1.Views.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
@@ -37,14 +38,14 @@ import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_PDF;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_SUB_HEADER;
 import static logo.philist.portfolioapp1.Models.ViewData.ViewData.VIEWTYPE_VIDEO;
 
-public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ArticleItemsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public static final String TAG = ProjectListingAdapter.class.getSimpleName();
+    public static final String TAG = ArticleItemsAdapter.class.getSimpleName();
 
     private Context context;
     private List<ViewData> viewData;
 
-    public ProjectListingAdapter(Context context, List<ViewData> viewData){
+    public ArticleItemsAdapter(Context context, List<ViewData> viewData){
         this.context = context;
         this.viewData = viewData;
     }
@@ -188,7 +189,14 @@ public class ProjectListingAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 break;
 
             case VIEWTYPE_IMAGE:
-                ((ViewHolderImage)holder).imageViewImage.setImageDrawable(ResourceManager.getAssetsImageDrawable(data.getContent(),context));
+                Drawable image = ResourceManager.getAssetsImageDrawable(data.getContent(),context);
+                ViewHolderImage viewHolderImage = (ViewHolderImage) holder;
+                viewHolderImage.imageViewImage.setImageDrawable(image);
+                viewHolderImage.imageViewImage.setScaleType(ImageView.ScaleType.CENTER);
+                ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) viewHolderImage.imageViewImage.getLayoutParams();
+                params.width = image.getIntrinsicWidth();
+                params.height = image.getIntrinsicHeight();
+                viewHolderImage.imageViewImage.setLayoutParams(params);
                 break;
 
             case VIEWTYPE_VIDEO:

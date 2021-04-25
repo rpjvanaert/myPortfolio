@@ -11,7 +11,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import logo.philist.portfolioapp1.Models.ArticleData.Article;
 import logo.philist.portfolioapp1.Models.ResourceManager;
 import logo.philist.portfolioapp1.R;
-import logo.philist.portfolioapp1.Views.Adapters.ProjectListingAdapter;
+import logo.philist.portfolioapp1.Views.Adapters.ArticleItemsAdapter;
 
 public class ProjectActivity extends YouTubeBaseActivity {
 
@@ -27,7 +27,7 @@ public class ProjectActivity extends YouTubeBaseActivity {
         Intent intent = getIntent();
 
         article = ResourceManager.getArticle(this, intent.getStringExtra(PROJECT_FILE_TAG));
-        ProjectListingAdapter adapter = new ProjectListingAdapter(this, article.getViewData());
+        ArticleItemsAdapter adapter = new ArticleItemsAdapter(this, article.getViewData());
         RecyclerView recyclerView = findViewById(R.id.recyclerView_project);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

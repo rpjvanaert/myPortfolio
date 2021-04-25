@@ -15,7 +15,15 @@
 		},
 		{
 			"type" : "paragraph",
-			"content" : "In het verleden heb ik wel eens te maken gehad met Blindwalls Gallery, via school, vrienden en de omgeving Breda. Gezien te hebben en ook eens een route gevolgd te hebben ervan, kwam dit idee bij mij opdagen. Een route navigatie app voor Blindwalls Gallery. Zo is dus 'Blind Walls Route' ontstaan."
+			"content" : "In het verleden heb ik wel eens te maken gehad met Blindwalls Gallery, via school, vrienden en de omgeving Breda. Door er ook ooit een route van gevolgd te hebben en rond de tijd van uitgave van het Blind Walls Gallery boek ben ik op dit idee gekomen."
+		},
+		{
+			"type" : "link",
+			"content" : "Blind Walls Gallery website|https://blindwalls.gallery/over/"
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/zenkone_lion.jpg"
 		},
 		{
 			"type" : "paragraph",
@@ -59,11 +67,47 @@
 		},
 		{
 			"type" : "sub_header",
+			"content" : "Design"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Aan de user experience is aandacht gestoken. Door alles toegankelijk en intuïtief te maken ontstond er een gebruikersvriendelijke app. Er zijn nog altijd verbeteringen en afwegingen, maar de app is er goed uitgekomen."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Zo is ervoor gekozen om het begin scherm een kaart te maken met alle Murals erop inclusief locatie aanduiding van de telefoon zelf. Om de overgang van deze weergave naar een andere zo logisch mogelijk te maken, hebben we voor 2 wegen gekozen."
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/homescreen.jpg"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "De eerste is een uitbreidbaar menu rechtsonder, deze is normaal gezien collapsed, alleen het menu icoon zichtbaar. Als er op geklikt wordt, verplaatsen zich eerst 2 andere knoppen, waarna alle knoppen uitbreiden met tekst. Je kan ze op dezelfde manier ook weer terug brengen. De andere 2 knoppen brengen je naar de lijst met murals of routes."
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/menu1.jpg"
+		},
+		{
+			"type" : "image",
+			"content" : "blindwallsroute/menu2.jpg"
+		},
+		{
+			"type" : "paragraph",
+			"content" : "De tweede optie is door op een mural indicatie te klikken op de map. Dit opent de detail activiteit van de mural. Deze twee opties zijn ontstaan omdat een begin scherm zonder kaart en indicatie van plek leeg voelde en andere mogelijkheden te extra. Simpel was de voorkeur."
+		},
+		{
+			"type" : "paragraph",
+			"content" : "Zo zijn er nog veel keuzes gemaakt over heel de app heen, kan altijd beter bij nader inzien, maar hier kan je van leren. Alles is te zien in de eindoplevering hieronder."
+		},
+		{
+			"type" : "sub_header",
 			"content" : "Eindoplevering"
 		},
 		{
 			"type" : "paragraph",
-			"content" : "De eindoplevering was in vorm van een expositie, hiervoor is er een pdf en een expositie video gemaakt. In de pdf staat alles, alle screenshots en uitleg van functionaliteiten en samenvatting van ontwerp."
+			"content" : "De eindoplevering was in vorm van een expositie, hiervoor is er een pdf en een expositie video gemaakt. De dag voor de eindoplevering is BlindWallsApi offline gezet. Dit zorgde voor een lastige expositie maar met wat hulp is het gelukt om een replica voor de eindexpositie werkend te krijgen. Dit zorgt ervoor dat er in de pdf niet altijd de meest recente screenshots staan (voorbeeld is paarse statusbar). In de pdf staat alles, alle screenshots en uitleg van functionaliteiten en samenvatting van ontwerp."
 		},
 		{
 			"type" : "pdf",
@@ -83,7 +127,7 @@
 		},
 		{
 			"type" : "paragraph",
-			"content" : "Uiteindelijk is er een mooie app opgezet, die helaas niet bruikbaar is in verband met het offline gaat van de BlindWallsApi. Ik heb hier vooral veel van geleerd, veel kleine dingen, dus ben vooral niet bang om mij vragen te stellen over het project!"
+			"content" : "Uiteindelijk is er een mooie app opgezet, die helaas niet bruikbaar is in verband met het offline gaan van de BlindWallsApi. Ik heb hier vooral veel van geleerd, veel kleine dingen, dus ben vooral niet bang om mij vragen te stellen over het project!"
 		}
 	]
 }

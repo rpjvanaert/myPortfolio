@@ -14,7 +14,7 @@ import logo.philist.portfolioapp1.Models.ArticleData.ArticleItem;
 import logo.philist.portfolioapp1.Models.ResourceManager;
 import logo.philist.portfolioapp1.R;
 import logo.philist.portfolioapp1.Views.Adapters.OnItemClickListener;
-import logo.philist.portfolioapp1.Views.Adapters.PortfolioListAdapter;
+import logo.philist.portfolioapp1.Views.Adapters.ArticleListAdapter;
 
 import static logo.philist.portfolioapp1.Models.ResourceManager.PROFILE_PICTURE_FILE;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         this.recyclerViewArticles = findViewById(R.id.recyclerView_articles);
         this.recyclerViewArticles.setLayoutManager(new LinearLayoutManager(this));
         this.articleItems = ResourceManager.getArticleItems(this);
-        PortfolioListAdapter portfolioListAdapter = new PortfolioListAdapter(articleItems, this, this);
+        ArticleListAdapter portfolioListAdapter = new ArticleListAdapter(articleItems, this, this);
         this.recyclerViewArticles.setAdapter(portfolioListAdapter);
     }
 

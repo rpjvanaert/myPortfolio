@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/article_item_width"
+    android:layout_marginHorizontal="@dimen/article_item_margin_h"
+    android:layout_marginVertical="@dimen/article_item_margin_v"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/imageView_project_item_image"
 
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="4:3"
 
         android:layout_margin="12dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
 
         android:scaleType="fitCenter"
